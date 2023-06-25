@@ -24,7 +24,7 @@ public class TransactionController {
     @GetMapping("transactions")
     public String getRootWebpage(ModelMap model) {
 
-        List<Transaction> allTransaction = transactionService.findAll();
+        List<Transaction> allTransaction = transactionRepo.findAll();
         System.out.println(allTransaction);
 
         model.put("transactions", allTransaction);
@@ -44,8 +44,9 @@ public class TransactionController {
 //            }
 //        }
 
-        Transaction theTranx = transactionService.findById(id);
-        model.put("transaction", theTranx);
+        Transaction theTrans = transactionService.findById(id);
+        //System.out.println(theTrans.toString());
+        model.put("transaction", theTrans);
 
 
         return "transaction";

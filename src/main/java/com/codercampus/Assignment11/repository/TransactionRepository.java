@@ -42,6 +42,8 @@ public class TransactionRepository {
 	}
 
 	public Transaction findById(Long id) {
-		return transactions.get(Math.toIntExact(id));
+		Transaction idNum = transactions.get(Math.toIntExact(id));
+
+		return idNum;
 	}
 }
