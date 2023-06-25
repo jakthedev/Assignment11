@@ -15,14 +15,14 @@ public class TransactionService {
 
     public Transaction findById(Long id) {
 
-//        Optional<Transaction> tranxOpt = transactionRepository.findAll()
-//                .stream()
-//                .filter(tranx -> tranx.getId().equals(id))
-//                .findAny();
+        Optional<Transaction> tranxOpt = transactionRepository.findAll()
+                .stream()
+                .filter(tranx -> tranx.getId().equals(id))
+                .findAny();
 
 
-           // return transactionRepository.findById(id);
-         return transactionRepository.findById(id);
+            return tranxOpt.orElse(new Transaction());
+         //return transactionRepository.findById(id);
         }
 
         public List<Transaction> findAll() {
