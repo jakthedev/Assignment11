@@ -24,7 +24,7 @@ public class TransactionController {
     @GetMapping("transactions")
     public String getRootWebpage(ModelMap model) {
 
-        List<Transaction> allTransaction = transactionRepo.findAll();
+        List<Transaction> allTransaction = transactionService.findAll();
         System.out.println(allTransaction);
 
         model.put("transactions", allTransaction);
